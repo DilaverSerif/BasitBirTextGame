@@ -1,6 +1,8 @@
 package com.dilaver;
 
 import com.dilaver.Enumlar.Mekan;
+import com.dilaver.Nesneler.Dusman;
+import com.dilaver.Nesneler.Oyuncu;
 
 public class Mekanlar {
 
@@ -17,8 +19,7 @@ public class Mekanlar {
         }
     }
 
-
-
+    
     static void Sehir(Oyuncu Poyuncu)
     {
         Poyuncu.setCan(100);

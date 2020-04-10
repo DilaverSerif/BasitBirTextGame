@@ -1,6 +1,6 @@
 package com.dilaver.Interfaceler;
 
-import com.dilaver.Oyuncu;
+import com.dilaver.Nesneler.Oyuncu;
 
 public interface DusmanEylemleri {
     public void CanGoster();

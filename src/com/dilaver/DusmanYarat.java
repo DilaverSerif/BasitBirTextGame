@@ -1,5 +1,9 @@
 package com.dilaver;
 
+import com.dilaver.Nesneler.Ayi;
+import com.dilaver.Nesneler.Corona;
+import com.dilaver.Nesneler.Dusman;
+
 public class DusmanYarat {
 
     public static Dusman Yarat()

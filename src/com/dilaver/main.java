@@ -3,6 +3,7 @@ package com.dilaver;
 import com.dilaver.Enumlar.Cinsiyet;
 import com.dilaver.Enumlar.Mekan;
 import com.dilaver.Enumlar.Sinif;
+import com.dilaver.Nesneler.Oyuncu;
 
 import java.util.Random;
 import java.util.Scanner;

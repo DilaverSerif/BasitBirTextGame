@@ -1,6 +1,6 @@
 package com.dilaver.Interfaceler;
 
-import com.dilaver.Dusman;
+import com.dilaver.Nesneler.Dusman;
 
 public interface DostEylemleri {
     public void Saldir(Dusman Pdusman);
