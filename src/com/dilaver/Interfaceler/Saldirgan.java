@@ -2,9 +2,8 @@ package com.dilaver.Interfaceler;
 
 import com.dilaver.Nesneler.Oyuncu;
 
-public interface DusmanEylemleri {
-    public void CanGoster();
+public interface Saldirgan {
+    public void Bilgilendirme();
     public void Saldir(Oyuncu hedef);
     public void Hareket();
-    public void Konus();
 }

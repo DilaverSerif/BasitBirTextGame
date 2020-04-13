@@ -12,9 +12,9 @@ public class main
 {
     private static Scanner tara = new Scanner(System.in);
     private static Random random = new Random();
+    public static Oyuncu oyuncu = new Oyuncu();
 
     public static void main(String[]args){
-        Oyuncu oyuncu = new Oyuncu();
         main.Konusmaci("OYUN HOŞGELDİN!ILK ONCE ISMINI OGRENELIM...!");
         oyuncu.setIsim(tara.next());
         main.Konusmaci(oyuncu.getIsim().toUpperCase() + " CINSIYETINI OGRENEBILIRMIYIM?!1)KADIN 2)ERKEK");
@@ -44,7 +44,7 @@ public class main
         }
         oyuncu.SinifAyalari();
         oyuncu.setMekan(Mekan.Sehir);
-        Mekanlar.MekanaGore(oyuncu);
+        Mekanlar.MekanaGore();
 
 
 

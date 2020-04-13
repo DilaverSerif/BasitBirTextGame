@@ -1,11 +1,20 @@
-package com.dilaver.Nesneler;
+package com.dilaver.Sınıflar;
 
 import com.dilaver.Interfaceler.Saldirgan;
+import com.dilaver.Nesneler.Oyuncu;
 import com.dilaver.main;
 
 public class Dusman implements Saldirgan {
     String isim;
-    int guc,zirh,can,mesafe,para;
+    int guc,zirh,can,mesafe,para,deneyim;
+
+    public int getDeneyim() {
+        return deneyim;
+    }
+
+    public void setDeneyim(int deneyim) {
+        this.deneyim = deneyim;
+    }
 
     public int getGuc() {
         return guc;
@@ -58,7 +67,7 @@ public class Dusman implements Saldirgan {
     @Override
     public void Bilgilendirme() {
         String hp = "";
-        for (int i = 0; i < getCan(); i++)
+        for (int i = 0; i < getCan()/10; i++)
         {
             hp += "#";
         }
@@ -68,7 +77,6 @@ public class Dusman implements Saldirgan {
 
     @Override
     public void Saldir(Oyuncu oyuncu) {
-
         oyuncu.setCan(oyuncu.getCan() - (getGuc() - oyuncu.getZirh()));
     }
 

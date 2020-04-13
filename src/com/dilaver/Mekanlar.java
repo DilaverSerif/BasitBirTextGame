@@ -1,41 +1,38 @@
 package com.dilaver;
-
 import com.dilaver.Enumlar.Mekan;
-import com.dilaver.Nesneler.Dusman;
-import com.dilaver.Nesneler.Oyuncu;
+import com.dilaver.Nesneler.Baykus;
+import com.dilaver.Sınıflar.Dusman;
 
 public class Mekanlar {
-
-    public static void MekanaGore(Oyuncu Poyuncu)
+    public static void MekanaGore()
     {
-        switch (Poyuncu.getMekan())
+        switch (main.oyuncu.getMekan())
         {
             case Zindan:
-                Zindan(Poyuncu,DusmanYarat.Yarat());
+                Zindan(DusmanYarat.Yarat());
                 break;
             case Sehir:
-                Sehir(Poyuncu);
+                Sehir();
                 break;
         }
     }
 
-    
-    static void Sehir(Oyuncu Poyuncu)
+    static void Sehir()
     {
-        Poyuncu.setCan(100);
+        main.oyuncu.setCan(100);
 
-        while (Poyuncu.getMekan() == Mekan.Sehir)
+        while (main.oyuncu.getMekan() == Mekan.Sehir)
         {
-            main.Konusmaci("SEHIRDESIN!NE YAPMAK ISTERSIN?!1)IKSIR AL 50 ALTIN!2)ZINDANA GIT");
+            main.Konusmaci("SEHIRDESIN!NE YAPMAK ISTERSIN?!1)IKSIR AL 50 ALTIN!2)ZINDANA GIT!3)PET SATIN AL 100 ALTIN!");
 
             switch (main.SecenekGir())
             {
                 case 1:
-                    if (Poyuncu.getPara() >= 50)
+                    if (main.oyuncu.getPara() >= 50)
                     {
-                        Poyuncu.setPara(Poyuncu.getPara() - 50);
-                        Poyuncu.setIksir(Poyuncu.getIksir() + 1);
-                        main.Konusmaci("IKSIR SATIN ALDIN!SAHIP OLDUGUN IKSIR ADEDI: " +Poyuncu.getIksir() + "!");
+                        main.oyuncu.setPara(main.oyuncu.getPara() - 50);
+                        main.oyuncu.setIksir(main.oyuncu.getIksir() + 1);
+                        main.Konusmaci("IKSIR SATIN ALDIN!SAHIP OLDUGUN IKSIR ADEDI: " +main.oyuncu.getIksir() + "!");
                     }
                     else
                     {
@@ -43,28 +40,42 @@ public class Mekanlar {
                     }
                     break;
                 case 2:
-                    Poyuncu.setMekan(Mekan.Zindan);
-                    MekanaGore(Poyuncu);
+                    main.oyuncu.setMekan(Mekan.Zindan);
+                    MekanaGore();
                     break;
+                case 3:
+                    if (main.oyuncu.getPara() >= 10)
+                    {
+                        main.Konusmaci("PET SATIN ALDIN!");
+                        main.oyuncu.setPara(main.oyuncu.getPara() - 10);
+                        main.oyuncu.setPet(new Baykus());
+                    }
+                    else
+                    {
+                        main.Konusmaci("YETERLI PARAN YOK!");
+                    }
+                    break;
+
             }
         }
 
     }
 
-    static void Zindan(Oyuncu Poyuncu, Dusman Pdusman) throws IllegalStateException {
-        main.Konusmaci("*****KAPISMA BASLIYOR RAKIBIN ISMI:"+Pdusman.getIsim()+"*****!");
 
-        while (Poyuncu.getCan() > 0 & Pdusman.getCan() > 0) {
-            Pdusman.Konus();
-            Pdusman.CanGoster();
+
+    static void Zindan(Dusman Pdusman) throws IllegalStateException {
+        main.Konusmaci("*****KAPISMA BASLIYOR RAKIBIN ISMI:"+Pdusman.getIsim()+"*****!");
+        Pdusman.Konus();
+
+        while (main.oyuncu.getCan() > 0 & Pdusman.getCan() > 0) {
+            Pdusman.Bilgilendirme();
             MesafeGosterici(Pdusman.getMesafe());
 
             main.Konusmaci("NE YAPICAKSIN?!1-KAC!2-SALDIR!3-DUSMANA YAKLAS!4-IKSIR IC!");
 
             if (Pdusman.getMesafe() == 0)
             {
-                Pdusman.Saldir(Poyuncu);
-                main.Konusmaci("HASAR YEDIN!CANIN: " + Poyuncu.getCan() +"!");
+                Pdusman.Saldir(main.oyuncu);
             }
             else
             {
@@ -77,8 +88,8 @@ public class Mekanlar {
                     if (main.Rastgele(5,1) == 4)
                     {
                         main.Konusmaci("KACTIN AFERIN!");
-                        Poyuncu.setMekan(Mekan.Sehir);
-                        MekanaGore(Poyuncu);
+                        main.oyuncu.setMekan(Mekan.Sehir);
+                        MekanaGore();
                     }
                     else
                     {
@@ -91,10 +102,10 @@ public class Mekanlar {
                     break;
 
                 case 2:
-                    switch (Poyuncu.getSinif())
+                    switch (main.oyuncu.getSinif())
                     {
                         case okcu:
-                            Poyuncu.Saldir(Pdusman);
+                            main.oyuncu.Saldir(Pdusman);
                             break;
                         case savasci:
                             if (Pdusman.getMesafe() > 0)
@@ -103,12 +114,18 @@ public class Mekanlar {
                             }
                             else
                             {
-                                Poyuncu.Saldir(Pdusman);
+                                main.oyuncu.Saldir(Pdusman);
                             }
 
                             break;
                         default:
-                            throw new IllegalStateException("Unexpected value: " + Poyuncu.getSinif());
+                            throw new IllegalStateException("Unexpected value: " + main.oyuncu.getSinif());
+                    }
+
+                    if (main.oyuncu.getPet() != null)
+                    {
+                       main.oyuncu.getPet().Saldir(Pdusman);
+                       main.oyuncu.getPet().Bilgilendirme();
                     }
 
                 break;
@@ -117,27 +134,30 @@ public class Mekanlar {
                     Pdusman.Hareket();
                     break;
                 case 4:
-                    Poyuncu.Iksiric();
+                    main.oyuncu.Iksiric();
                     break;
 
                 default:
                     main.Konusmaci("EYVAH YANLIS BIR HAREKET YAPTIN DUSMAN YAKLASTI!");
             }
 
+            main.oyuncu.Bilgilendirme();
+
         }
 
         //region sonuc
-        if (Poyuncu.getCan() <= 0)
+        if (main.oyuncu.getCan() <= 0)
         {
             main.Konusmaci("KAYBETTTIN SEHRE GERI DONUYORSUN!");
-            Poyuncu.setMekan(Mekan.Sehir);
+            main.oyuncu.setMekan(Mekan.Sehir);
         }
         else if(Pdusman.getCan() >= 0)
         {
-            Poyuncu.setPara(Poyuncu.getPara()+Pdusman.getPara());
+            main.oyuncu.setPara(main.oyuncu.getPara()+Pdusman.getPara());
             main.Konusmaci("DUSMANI YENDIN!SEHRE DONULUYOR!");
-            Poyuncu.setMekan(Mekan.Sehir);
-            MekanaGore(Poyuncu);
+            main.oyuncu.DeneyimHesapla(Pdusman.getDeneyim());
+            main.oyuncu.setMekan(Mekan.Sehir);
+            MekanaGore();
         }
         //endregion
     }

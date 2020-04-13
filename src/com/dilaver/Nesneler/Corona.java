@@ -1,5 +1,6 @@
 package com.dilaver.Nesneler;
 
+import com.dilaver.Sınıflar.Dusman;
 import com.dilaver.main;
 
 public class Corona extends Dusman {

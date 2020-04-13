@@ -3,19 +3,29 @@ package com.dilaver.Nesneler;
 import com.dilaver.Enumlar.Cinsiyet;
 import com.dilaver.Enumlar.Mekan;
 import com.dilaver.Enumlar.Sinif;
-import com.dilaver.Interfaceler.DostEylemleri;
-import com.dilaver.Nesneler.Dusman;
+import com.dilaver.Interfaceler.Dost;
+import com.dilaver.Sınıflar.Dusman;
+import com.dilaver.Sınıflar.Pet;
 import com.dilaver.main;
 
-public class Oyuncu implements DostEylemleri {
+public class Oyuncu implements Dost {
     public static String isim;
     private Cinsiyet cinsiyet;
     private Sinif sinif;
-    private int guc,can,zirh,iksir,para;
+    private int guc,can,zirh,iksir,para,deneyim;
     private Mekan mekan;
+    private Pet pet;
 
     public Mekan getMekan() {
         return mekan;
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
     public void setMekan(Mekan mekan) {
@@ -86,6 +96,13 @@ public class Oyuncu implements DostEylemleri {
         return iksir;
     }
 
+    public int getDeneyim() {
+        return deneyim;
+    }
+
+    public void setDeneyim(int deneyim) {
+        this.deneyim = deneyim;
+    }
 
     @Override
     public void Saldir(Dusman Pdusman) {
@@ -94,8 +111,14 @@ public class Oyuncu implements DostEylemleri {
     }
 
     @Override
-    public void Konus(String Pmetin) {
-        main.Konusmaci(getIsim()+": " + Pmetin + "!");
+    public void Bilgilendirme() {
+
+        String hp = "";
+        for (int i = 0; i < getCan()/10; i++)
+        {
+            hp += "*";
+        }
+        main.Konusmaci("Canin:" + hp + " ("+getCan()+")!");
     }
 
     @Override
@@ -134,6 +157,18 @@ public class Oyuncu implements DostEylemleri {
                 setGuc(50);
                 setPara(50);
                 break;
+        }
+    }
+
+    public void DeneyimHesapla(int gelenDeneyim)
+    {
+        setDeneyim(getDeneyim() + gelenDeneyim);
+        if (getDeneyim() >= 100)
+        {
+            setDeneyim(0);
+            setCan(getCan() + 10);
+            setGuc(getGuc() + 10);
+            setZirh(getZirh() + 10);
         }
     }
 
