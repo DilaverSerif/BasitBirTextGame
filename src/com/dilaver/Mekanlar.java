@@ -14,6 +14,9 @@ public class Mekanlar {
             case Sehir:
                 Sehir();
                 break;
+            default:
+                System.out.print("HATAA");
+                break;
         }
     }
 
@@ -55,6 +58,9 @@ public class Mekanlar {
                         main.Konusmaci("YETERLI PARAN YOK!");
                     }
                     break;
+                default:
+                    System.out.print("HATAA");
+                    break;
 
             }
         }
@@ -63,7 +69,7 @@ public class Mekanlar {
 
 
 
-    static void Zindan(Dusman Pdusman) throws IllegalStateException {
+    static void Zindan(Dusman Pdusman){
         main.Konusmaci("*****KAPISMA BASLIYOR RAKIBIN ISMI:"+Pdusman.getIsim()+"*****!");
         Pdusman.Konus();
 
@@ -119,7 +125,8 @@ public class Mekanlar {
 
                             break;
                         default:
-                            throw new IllegalStateException("Unexpected value: " + main.oyuncu.getSinif());
+                            System.out.print("HATAA");
+                            break;
                     }
 
                     if (main.oyuncu.getPet() != null)

@@ -28,6 +28,10 @@ public class main
             case 2:
                 oyuncu.setCinsiyet(Cinsiyet.erkek);
                 break;
+            default:
+                System.out.print("HATAA");
+                System.exit(0);
+                break;
         }
 
         main.Konusmaci("PEKALA " +oyuncu.getIsim().toUpperCase()+" ŞİMDİ KARAKTERININ SINIFINI SEÇ!1)SAVASCI 2)OKCU");
@@ -40,6 +44,10 @@ public class main
                 break;
             case 2:
                 oyuncu.setSinif(Sinif.okcu);
+                break;
+            default:
+                System.out.print("HATAA");
+                System.exit(0);
                 break;
         }
         oyuncu.SinifAyalari();
