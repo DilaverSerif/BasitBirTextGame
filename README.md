@@ -3,7 +3,7 @@ Oyunum başta kullanıcı kendine bir karakter yaratarak düşmanlarıyla savaş
 
 ![Image](https://i.hizliresim.com/n9UICk.png)
 
- 	Oyunda iki farklı interface bulunmaktadır biri oyuncaya düşman objelere ait iken diğeri oyuncuya ve oyuncuya dost objelere aittir.Dusman pet ve oyuncu scriptlerindeki değişkenler için kapsülleme kullanılmıştır.
+ Oyunda iki farklı interface bulunmaktadır biri oyuncaya düşman objelere ait iken diğeri oyuncuya ve oyuncuya dost objelere aittir.Dusman pet ve oyuncu scriptlerindeki değişkenler için kapsülleme kullanılmıştır.
 	
 •Corona ve Ayi objeleri Dusman classindan extends almaktadır.
 
@@ -12,6 +12,7 @@ Oyunum başta kullanıcı kendine bir karakter yaratarak düşmanlarıyla savaş
 •Oyuncu Classindan oyunun başlangıçta kullanıcıdan alınan bilgilerle yeni Obje yaratılır.
 
 Programda fonksiyonların bulunduğu 3 adet script bulunmaktadır.
+
 1)Main
 
 Main içerisinde kullanıcıya sorular sorularak kişiye özel Oyuncu oluşturulur.
