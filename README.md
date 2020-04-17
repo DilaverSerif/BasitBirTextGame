@@ -5,9 +5,12 @@ Oyunum başta kullanıcı kendine bir karakter yaratarak düşmanlarıyla savaş
 
  	Oyunda iki farklı interface bulunmaktadır biri oyuncaya düşman objelere ait iken diğeri oyuncuya ve oyuncuya dost objelere aittir.Dusman pet ve oyuncu scriptlerindeki değişkenler için kapsülleme kullanılmıştır.
 	
-•	Corona ve Ayi objeleri Dusman classindan extends almaktadır.
-•	Baykus Pet classindan extends almaktadır.
-•	Oyuncu Classindan oyunun başlangıçta kullanıcıdan alınan bilgilerle yeni Obje yaratılır.
+•Corona ve Ayi objeleri Dusman classindan extends almaktadır.
+
+•Baykus Pet classindan extends almaktadır.
+
+•Oyuncu Classindan oyunun başlangıçta kullanıcıdan alınan bilgilerle yeni Obje yaratılır.
+
 Programda fonksiyonların bulunduğu 3 adet script bulunmaktadır.
 1)Main
 
