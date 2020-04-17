@@ -1,7 +1,10 @@
 # BasitBirTextGame
-Oyunum başta kullanıcı kendine bir karakter yaratarak düşmanlarıyla savaştığı basit bir text tabanlı rpg(rol yapma) oyunudur. Oyunda iki sınıf vardır okçu ve savaşçı bunun yanında oyunda düşmanlar rastgele oluşurken oyuncunun düşmanlarını alt ederek deneyim kazanarak oyunda daha güçlenebilmektedir. Oyun 2 adet harita barındırmaktadır bunlar zindan ve şehirdir. Savaşlarda mesafe göstergesi bulunmaktadır O işaret oyuncuyu * işareti mesafeyi X işareti ise düşmanı ifade etmektedir. Detaylı bilgi devamında verilmektedir.
+Oyunum başta kullanıcı kendine bir karakter yaratarak düşmanlarıyla savaştığı basit bir text tabanlı rpg(rol yapma) oyunudur. Oyunda iki sınıf vardır okçu ve savaşçı bunun yanında oyunda düşmanlar rastgele oluşurken, oyuncu düşmanlarını alt ederek deneyim kazanarak oyunda ilerlemektedir. Oyun 2 adet harita barındırmaktadır bunlar zindan ve şehirdir. Savaşlarda mesafe göstergesi bulunmaktadır O işaret oyuncuyu, * işareti mesafeyi, X işareti ise düşmanı ifade etmektedir. Detaylı bilgi devamında verilmektedir.
+
 ![Image](https://i.hizliresim.com/n9UICk.png)
- 	Oyunda iki farklı interface bulunmaktadır biri oyuncaya düşman objelere ait iken diğeri oyuncuya ve oyuncuya dost objelere aittir.
+
+ 	Oyunda iki farklı interface bulunmaktadır biri oyuncaya düşman objelere ait iken diğeri oyuncuya ve oyuncuya dost objelere aittir.Dusman pet ve oyuncu scriptlerindeki değişkenler için kapsülleme kullanılmıştır.
+	
 •	Corona ve Ayi objeleri Dusman classindan extends almaktadır.
 •	Baykus Pet classindan extends almaktadır.
 •	Oyuncu Classindan oyunun başlangıçta kullanıcıdan alınan bilgilerle yeni Obje yaratılır.
