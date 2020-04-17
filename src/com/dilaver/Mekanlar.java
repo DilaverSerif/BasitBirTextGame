@@ -67,8 +67,6 @@ public class Mekanlar {
 
     }
 
-
-
     static void Zindan(Dusman Pdusman){
         main.Konusmaci("*****KAPISMA BASLIYOR RAKIBIN ISMI:"+Pdusman.getIsim()+"*****!");
         Pdusman.Konus();
@@ -163,6 +161,9 @@ public class Mekanlar {
             main.oyuncu.setPara(main.oyuncu.getPara()+Pdusman.getPara());
             main.Konusmaci("DUSMANI YENDIN!SEHRE DONULUYOR!");
             main.oyuncu.DeneyimHesapla(Pdusman.getDeneyim());
+            main.Konusmaci("KAZANDIGIN PARA:" + Pdusman.getPara()+"!"+
+            "KAZANDIGIN DENEYIM 100/" + main.oyuncu.getDeneyim() +"!");
+
             main.oyuncu.setMekan(Mekan.Sehir);
             MekanaGore();
         }
