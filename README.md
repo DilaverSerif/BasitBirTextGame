@@ -36,6 +36,7 @@ a)Sehir
 b)Zindan
 
 ![Image](https://i.hizliresim.com/IKnD2H.png)
+
 Zindan ekranında 4 adet seçeneğin yanında bilgilendirme de mevcuttur ilk satırda 
 Düşmanın narası yazar 2 satırda düşmanın canı 3.satırda düşmanın gücü ve zırhı 4. Satırda oyuncuyla düşmanla arasındaki mesafeyi göstermektedir.
 Kaç seçeneği savaş esnasında savaşı bitirip şehre gitmek için kullanılır lakin 10/4 şans ile eğer şanssızdanız düşman mesafe katleder.
