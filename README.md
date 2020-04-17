@@ -30,6 +30,7 @@ Mekanlar scriptinde iki adet fonksiyon vardır.
 a)Sehir
 
  Sehir fonksiyonunda kullanıcıya 3 adet seçenek sunulur iksir alıp savaş esnasında canını doldurabilir. Zindana gidip düşmanlarla kapışabilir ve pet (yardımcı hayvan) alarak düşmanlarla kapışırken yardım alabilir.
+ 
 ![Image](https://i.hizliresim.com/YC02ko.png)
 
 b)Zindan
